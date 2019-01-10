@@ -1,0 +1,36 @@
+{
+  "name": "vertigotricking.com",
+  "version": "1.0.0",
+  "description": "Official Website of Vertigo Tricking",
+  "scripts": {
+    "start": "http-server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mantism/Vertigo.git"
+  },
+  "keywords": [
+    "Front",
+    "End",
+    "Project",
+    "Vertigo",
+    "Tricking"
+  ],
+  "author": "Mikael Mantis",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mantism/Vertigo/issues"
+  },
+  "homepage": "https://github.com/mantism/Vertigo",
+  "devDependencies": {
+    "gulp": "^4.0.0",
+    "gulp-clean-css": "^4.0.0",
+    "gulp-conventional-changelog": "^2.0.9",
+    "gulp-gh-pages": "^0.5.4",
+    "gulp-git": "^2.8.1",
+    "gulp-htmlmin": "^5.0.1",
+    "gulp-minify": "^3.1.0",
+    "run-sequence": "^2.2.1"
+  }
+}

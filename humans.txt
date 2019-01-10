@@ -1,0 +1,8 @@
+/* TEAM */
+Your title: Vertigo
+Site: vertigotricking.com
+Location: Philadelphia, USA
+
+/* SITE */
+Last update: 2019/01/09
+Standards: HTML5, CSS3

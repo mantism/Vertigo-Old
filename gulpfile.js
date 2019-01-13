@@ -61,22 +61,6 @@ gulp.task('minify', gulp.series('move-res', 'minify-css', 'minify-html', 'minify
     done()
   }));
 
-/*gulp.task('minify', (callback) => {
-  runSequence(
-    'move-res',
-    'minify-css',
-    'minify-html',
-    'minify-js',
-    (error) => {
-      if (error) {
-        console.log(error.message);
-      } else {
-        console.log('Minify finished successfully');
-      }
-      callback(error);
-    });
-});*/
-
 gulp.task('deploy', (callback) => {
   runSequence(
     'minify',

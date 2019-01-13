@@ -2,15 +2,7 @@ html, body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   background-color: #373737;
   color: white;
-  height: 5000px;
   margin: 0;
-  background-image: url("res/background.jpg");
-  background-repeat: no-repeat;
-  background-position: left left fixed;
-  -webkit-background-size: 100%;
-  -moz-background-size: 100%;
-  -o-background-size: 100%;
-  background-size: 100%;
   font-family: 'Abel', sans-serif;
 }
 
@@ -23,6 +15,7 @@ header {
   margin-top: 0;
   margin-bottom: 0;
   height: 100px;
+  padding: 10px 0;
 }
 
 #menu {
@@ -33,6 +26,10 @@ header {
 #menu a {
   text-decoration: none;
   color: white;
+}
+
+#menu a:hover {
+  color: grey;
 }
 
 #menu ul {
@@ -56,39 +53,106 @@ header {
   display: none;
 }
 
-.content {
-  margin: 0;
-  padding-top: 100px;
+#home {
+  padding-top: 15rem;
+  background-image: url("res/background.jpg");
+  background-repeat: no-repeat;
+  background-position: left left fixed;
+  -webkit-background-size: 100%;
+  -moz-background-size: 100%;
+  -o-background-size: 100%;
+  background-size: 100%;
 }
 
 .section {
+  height: 30rem;
+  margin: 0 auto;
+  text-align: center;
+  padding-top: 1rem;
+}
+
+.section h1 {
+  margin: 0;
+}
+
+.content {
+  background-image: linear-gradient(#1c1c1c, #22364f);
+  height: 5000px;
   margin: 0 auto;
 }
 
-#home {
-  height: auto;
-  margin: 15rem auto;
-  text-align: center;
-  top: 50%;
-  left: 50%;
-}
-
-@keyframes register-hover {
+@keyframes box-hover {
   from {background-color: none; color: white;}
   to {background-color: white; color: black;}
 }
 
-.register-button {
+.box-button {
   outline: 2px solid white;  
   width: 15rem;
   margin: 5rem auto;
   padding: 0.25rem;
 }
 
-.register-button:hover {
+.box-button:hover {
   background-color: white;
   color: black;
-  animation-name: register-hover;
+  animation-name: box-hover;
   animation-duration: 0.25s;
 }
 
+.box-button.year {
+  display: inline-block;
+  margin: 10px;
+}
+
+.box-button.selected {
+  background-color: white;
+  color: black;
+}
+
+.big-text {
+  font-size: 3.5rem;
+}
+
+.description {
+  margin: 2rem auto;
+  width: 60%;
+}
+
+#gathering {
+  padding-top: 10rem;
+}
+
+.pic {
+  margin: 1rem;
+  width: 50%;
+  height: 50%;
+}
+
+.grid-container {
+  display: inline-grid;
+  grid-gap: 10px;
+  grid-template-columns: 50% 50%;
+}
+
+.small-section {
+  width: 70%;
+  margin: 10px auto;
+  display: inline-block;
+}
+
+.small-section ul{
+  list-style-type: none;
+  text-align: left;
+  padding: 0;
+}
+
+.small-section img {
+  width: 75%;
+  height: 75%;
+}
+
+#group-photo {
+  display: block;
+  margin: 1rem auto;
+}

@@ -55,7 +55,13 @@ gulp.task('move-res', () => {
     .pipe(gulp.dest('./res'));
 });
 
-gulp.task('minify', (callback) => {
+gulp.task('minify', gulp.series('move-res', 'minify-css', 'minify-html', 'minify-js',
+  (done) => {
+    console.log('Minify finished successfully!') 
+    done()
+  }));
+
+/*gulp.task('minify', (callback) => {
   runSequence(
     'move-res',
     'minify-css',
@@ -69,7 +75,7 @@ gulp.task('minify', (callback) => {
       }
       callback(error);
     });
-});
+});*/
 
 gulp.task('deploy', (callback) => {
   runSequence(

@@ -2,15 +2,16 @@ html, body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   background-color: #373737;
   color: white;
-  height: 100%;
+  height: 5000px;
   margin: 0;
   background-image: url("res/background.jpg");
   background-repeat: no-repeat;
-  background-position: left center;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+  background-position: left left fixed;
+  -webkit-background-size: 100%;
+  -moz-background-size: 100%;
+  -o-background-size: 100%;
+  background-size: 100%;
+  font-family: 'Abel', sans-serif;
 }
 
 header {
@@ -66,8 +67,28 @@ header {
 
 #home {
   height: auto;
-  margin: 20rem auto;
+  margin: 15rem auto;
   text-align: center;
   top: 50%;
   left: 50%;
 }
+
+@keyframes register-hover {
+  from {background-color: none; color: white;}
+  to {background-color: white; color: black;}
+}
+
+.register-button {
+  outline: 2px solid white;  
+  width: 15rem;
+  margin: 5rem auto;
+  padding: 0.25rem;
+}
+
+.register-button:hover {
+  background-color: white;
+  color: black;
+  animation-name: register-hover;
+  animation-duration: 0.25s;
+}
+

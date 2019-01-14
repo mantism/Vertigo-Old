@@ -14,7 +14,6 @@ header {
   z-index: 10;
   margin-top: 0;
   margin-bottom: 0;
-  height: 100px;
   padding: 10px 0;
 }
 
@@ -25,11 +24,15 @@ header {
 
 #menu a {
   text-decoration: none;
+  color: grey;
+}
+
+#menu .button:hover {
   color: white;
 }
 
-#menu a:hover {
-  color: grey;
+#menu .button.active {
+  color: white;
 }
 
 #menu ul {
@@ -62,10 +65,10 @@ header {
   -moz-background-size: 100%;
   -o-background-size: 100%;
   background-size: 100%;
+  height: 40rem;
 }
 
 .section {
-  height: 30rem;
   margin: 0 auto;
   text-align: center;
   padding-top: 1rem;
@@ -136,14 +139,14 @@ header {
 }
 
 .small-section {
-  width: 70%;
+  width: 100%;
   margin: 10px auto;
   display: inline-block;
 }
 
 .small-section ul{
   list-style-type: none;
-  text-align: left;
+  text-align: center;
   padding: 0;
 }
 
@@ -154,5 +157,18 @@ header {
 
 #group-photo {
   display: block;
-  margin: 1rem auto;
+  margin: 3rem auto;
+}
+
+#about {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.year-section {
+  display: none;
+}
+
+.year-section.active {
+  display: block;
 }

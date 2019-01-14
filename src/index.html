@@ -15,14 +15,14 @@
       <div id="menu">
         <div id="links" class="topnav">
           <ul>
-            <li><a class="button" href="#">HOME</a></li>
-            <li><a class="button" href="#">GATHERING</a></li>
-            <li><a class="button" href="#">ABOUT</a></li>
-            <li><img src="res/logo.png" class="logo" height="30rem"/></li>
-            <li><a class="button" href="#">MEDIA</a></li>
-            <li><a class="button" href="#">MERCH</a></li>
-            <li><a class="button" href="#">CONTACT</a></li>
-            <li><a href="javascript:void(0);" class="icon">&#9776</a></li>
+            <li><a class="button active" id="home-button" href="#home">HOME</a></li>
+            <li><a class="button" id="gathering-button" href="#gathering">GATHERING</a></li>
+            <li><a class="button" id="about-button" href="#about">ABOUT</a></li>
+            <li><img src="res/logo.png" class="logo" id="nav-logo" height="30rem"/></li>
+            <li><a class="button" id="media-button" href="#">MEDIA</a></li>
+            <li><a class="button" id="merch-button" href="#">MERCH</a></li>
+            <li><a class="button" id="contact-button" href="#">CONTACT</a></li>
+            <li><a href="javascript:void(0);" class="icon" onClick="">&#9776</a></li>
           </ul>
         </div>
       </div>
@@ -43,22 +43,22 @@
           More info coming soon. Join our email listserve to stay up to date
           as announcements roll out!
         </p>
-        <div class="box-button year selected">2018</div>
-        <div class="box-button year">2019</div>
+        <div class="box-button year" id="button-2018" onClick="yearButtonClick(this)">2018</div>
+        <div class="box-button year selected" id="button-2019" onClick="yearButtonClick(this)">2019</div>
         <div class="year-section" id="v1"> 
           <img class="pic" id="group-photo" src="res/group.jpg"/>
           <div class="grid-container">
-            <div class="small-section">
-                <h3 style="border-bottom: white solid 1px; width: 75%; text-align: center;">GUESTS</h3>
+            <div class="small-section" style="padding: 0 2rem;">
+                <h3 style="border-bottom: white solid 1px; text-align: center;">GUESTS</h3>
                 <ul>
-                  <li>Aidan Kennedy</li>
-                  <li>Allen Davies</li>
-                  <li>Brendan Morrison</li>
-                  <li>Eduardo Ruvalcaba</li>
-                  <li>Matt Milhoan</li>
-                  <li>Nick Fry</li>
-                  <li>Sam Caspio</li>
-                  <li>Dom Lewis</li>
+                  <li>Aidan Kennedy - IG: aidankennedy001</li>
+                  <li>Allen Davies - IG: allendavies</li>
+                  <li>Brendan Morrison - IG: masteringtricking</li>
+                  <li>Dom Lewis - IG: domitrick</li>
+                  <li>Eduardo Ruvalcaba - IG: eduardoruv</li>
+                  <li>Matt Milhoan - IG: @mmilhoan92</li>
+                  <li>Nick Fry - IG: nickfryy</li>
+                  <li>Sam Caspio - IG: scaspio</li>
                 </ul>
               </div>
               <div class="small-section">
@@ -66,8 +66,32 @@
               </div>
           </div>
         </div>
+        <div class="year-section active" id="v2">
+          <div class="small-section">
+            <h3>GUESTS</h3>
+            <p>TBA</p>
+            <h3>SCHEDULE</h3>
+            <p>TBA</p>
+            <h3>TICKETS</h3>
+            <p>Early bird ticket - $65</p>
+          </div>
+        </div>
+      </div>
+      <div class="section" id="about">
+        <h1 class="big-text">ABOUT</h1>
+      </div>
+      <div class="section" id="media">
+        <h1 class="big-text">MEDIA</h1>
+      </div>
+      <div class="section" id="merch">
+        <h1 class="big-text">MERCH</h1>
+      </div>
+      <div class="section" id="contact">
+        <h1 class="big-text">CONTACT</h1>
       </div>
     </div>
   </body>
   <link rel="stylesheet" href="style.css?v=0.1.3">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script src="script.js?v=1.0"></script>
 </html>

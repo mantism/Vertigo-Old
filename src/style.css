@@ -57,21 +57,21 @@ header {
 }
 
 #home {
-  padding-top: 15rem;
+  padding: 15rem 0;
   background-image: url("res/background.jpg");
   background-repeat: no-repeat;
-  background-position: left left fixed;
-  -webkit-background-size: 100%;
-  -moz-background-size: 100%;
-  -o-background-size: 100%;
-  background-size: 100%;
-  height: 40rem;
+  background-position: center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 .section {
   margin: 0 auto;
   text-align: center;
-  padding-top: 1rem;
+  padding-top: 2rem;
 }
 
 .section h1 {
@@ -161,7 +161,7 @@ header {
 }
 
 #about {
-  width: 50%;
+  width: 60%;
   margin: 0 auto;
 }
 
@@ -171,4 +171,20 @@ header {
 
 .year-section.active {
   display: block;
+}
+
+.insta-grid {
+  margin: 0 auto;
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: 300px 300px 300px;
+  grid-template-rows: 300px 300px 300px;
+  justify-items: center;
+  align-items: center;
+}
+
+.post {
+  background-color: orange;
+  width: 100%;
+  height: 100%;
 }

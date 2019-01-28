@@ -4,6 +4,8 @@
   "description": "Official Website of Vertigo Tricking",
   "scripts": {
     "start": "http-server",
+    "prebuild": "babel src/script.js --presets env -o src/build/script.js",
+    "build": "gulp minify",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -24,6 +26,10 @@
   },
   "homepage": "https://github.com/mantism/Vertigo",
   "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.2.2",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-latest": "^6.24.1",
     "gulp": "^4.0.0",
     "gulp-clean-css": "^4.0.0",
     "gulp-conventional-changelog": "^2.0.9",
@@ -32,5 +38,8 @@
     "gulp-htmlmin": "^5.0.1",
     "gulp-minify": "^3.1.0",
     "run-sequence": "^2.2.1"
+  },
+  "babel": {
+    "presets": ["env"]
   }
 }

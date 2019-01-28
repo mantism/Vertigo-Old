@@ -40,7 +40,7 @@ gulp.task('minify-html', () => {
 });
 
 gulp.task('minify-js', () => {
-  return gulp.src('./src/script.js')
+  return gulp.src('./src/build/script.js')
     .pipe(minify({
       ext: {
 				src:'-debug.js',

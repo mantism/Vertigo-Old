@@ -1,13 +1,26 @@
-var isInView = function (element) {
+var homeBottom = $('#home').offset().top + $('#home').outerHeight()
+var navButtons = ['#home-button', '#gathering-button', '#about-button', '#media-button', '#merch-button', '#contact-button']
+var instaLinks = ['https://www.instagram.com/p/BsrNSRolF0u/', 
+                  'https://www.instagram.com/p/BjvgD8yHBpP/', 
+                  'https://www.instagram.com/p/BjaMnpDH8A6/',
+                  'https://www.instagram.com/p/BjGI0g9nKcX/',
+                  'https://www.instagram.com/p/BjDRhHDna1G/',
+                  'https://www.instagram.com/p/Bi6OLcLnCK5/',
+                  'https://www.instagram.com/p/Bi5iaadnWML/',
+                  'https://www.instagram.com/p/Bi3Aw7rnX6-/',
+                  'https://www.instagram.com/p/BizhFognIWC/'
+                ];
+var atTop;
+        
+
+function isInView(element) {
   var elementTop = element.offset().top;
   var elementBot = elementTop + element.outerHeight();
   var screenBot = $(window).scrollTop() + $(window).height();
   return (screenBot > elementTop) && (screenBot <  elementBot);
 }
 
-homeBottom = $('#home').offset().top + $('#home').outerHeight()
-navButtons = ['#home-button', '#gathering-button', '#about-button', '#media-button', '#merch-button', '#contact-button']
-var toggleActive = function (element) {
+function toggleActive(element) {
   for (var i = 0; i < navButtons.length; i++) {
     if (element === navButtons[i]) {
       $(navButtons[i]).addClass('active');
@@ -17,8 +30,33 @@ var toggleActive = function (element) {
   }
 }
 
+function loadInstaPosts(callback = () => {
+  for (var i = 0; i < images.length; i++) {
+    var post = document.getElementById('post-' + i);
+    console.log(post)
+    post.appendChild(images[i])
+  }
+  console.log('callback was called')
+}) {
+  var images = []
+  for (var i = 0; i < instaLinks.length; i++) {
+    var url = 'https://api.instagram.com/oembed?url=' + instaLinks[i];
+    fetch(url)
+      .then(response => response.json())
+      .then(data => {
+        var img = document.createElement('img');
+        img.src = data.thumbnail_url;
+        images.push(img);
+      })
+  }
+  if (images.length === 9) {
+    callback()
+  }
+  
+}
 
-var yearButtonClick = function(div) {
+
+function yearButtonClick(div) {
   if (div.id === 'button-2018') {
     $('#button-2018').addClass('selected')
     $('#button-2019').removeClass('selected')
@@ -64,6 +102,9 @@ $(window).scroll(function() {
 });
 
 $(document).ready( function() {
+  loadInstaPosts();
+  atTop = true;
+
   $('#home-button').click(function() {
     toggleActive('#home-button');
   });

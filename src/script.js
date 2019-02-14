@@ -30,29 +30,30 @@ function toggleActive(element) {
   }
 }
 
-function loadInstaPosts(callback = () => {
-  for (var i = 0; i < images.length; i++) {
-    var post = document.getElementById('post-' + i);
-    console.log(post)
-    post.appendChild(images[i])
-  }
-  console.log('callback was called')
-}) {
+function loadInstaPosts() {
   var images = []
+  var posts = []
   for (var i = 0; i < instaLinks.length; i++) {
     var url = 'https://api.instagram.com/oembed?url=' + instaLinks[i];
+    posts.push(document.getElementById('post-' + (i + 1)));
     fetch(url)
       .then(response => response.json())
       .then(data => {
         var img = document.createElement('img');
         img.src = data.thumbnail_url;
-        images.push(img);
+        if (img.height > img.width) {
+          img.height = 'auto';
+          img.width = 'auto';
+        }
+        images.push(img)
+      }).then(() => {
+        if (images.length === 9) {
+          for (var j = 0; j < images.length; j++) {
+            posts[j].appendChild(images[j])
+          }
+        }
       })
   }
-  if (images.length === 9) {
-    callback()
-  }
-  
 }
 
 

@@ -83,21 +83,13 @@ $(window).scroll(function() {
 
   if (isInView($('#gathering')) && !atTop) {
     toggleActive('#gathering-button');
-  }
-
-  if (isInView($('#about'))) {
+  } else if (isInView($('#about'))) {
     toggleActive('#about-button');
-  }
-
-  if (isInView($('#media'))) {
+  } else if (isInView($('#media'))) {
     toggleActive('#media-button');
-  }
-
-  if (isInView($('#merch'))) {
+  } else if (isInView($('#merch'))) {
     toggleActive('#merch-button')
-  }
-
-  if (isInView($('#contact'))) {
+  } else if (isInView($('#contact'))) {
     toggleActive('#contact-button')
   }
 });

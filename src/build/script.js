@@ -23,16 +23,30 @@ function toggleActive(element) {
 }
 
 function loadInstaPosts() {
+  var images = [];
+  var posts = [];
+
   for (var i = 0; i < instaLinks.length; i++) {
-    var post = document.getElementById('post-' + i);
-    console.log(post);
     var url = 'https://api.instagram.com/oembed?url=' + instaLinks[i];
+    posts.push(document.getElementById('post-' + (i + 1)));
     fetch(url).then(function (response) {
       return response.json();
     }).then(function (data) {
       var img = document.createElement('img');
       img.src = data.thumbnail_url;
-      post.appendChild(img);
+
+      if (img.height > img.width) {
+        img.height = 'auto';
+        img.width = 'auto';
+      }
+
+      images.push(img);
+    }).then(function () {
+      if (images.length === 9) {
+        for (var j = 0; j < images.length; j++) {
+          posts[j].appendChild(images[j]);
+        }
+      }
     });
   }
 }
@@ -63,21 +77,13 @@ $(window).scroll(function () {
 
   if (isInView($('#gathering')) && !atTop) {
     toggleActive('#gathering-button');
-  }
-
-  if (isInView($('#about'))) {
+  } else if (isInView($('#about'))) {
     toggleActive('#about-button');
-  }
-
-  if (isInView($('#media'))) {
+  } else if (isInView($('#media'))) {
     toggleActive('#media-button');
-  }
-
-  if (isInView($('#merch'))) {
+  } else if (isInView($('#merch'))) {
     toggleActive('#merch-button');
-  }
-
-  if (isInView($('#contact'))) {
+  } else if (isInView($('#contact'))) {
     toggleActive('#contact-button');
   }
 });

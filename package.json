@@ -4,7 +4,7 @@
   "description": "Official Website of Vertigo Tricking",
   "scripts": {
     "start": "http-server",
-    "prebuild": "babel src/script.js --presets env -o src/build/script.js",
+    "prebuild": "babel --presets env src/script.js -o src/build/script.js",
     "build": "gulp minify",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -28,7 +28,9 @@
   "devDependencies": {
     "@babel/cli": "^7.2.3",
     "@babel/core": "^7.2.2",
+    "babel-core": "^6.26.3",
     "babel-preset-env": "^1.7.0",
+    "babel-preset-es2015": "^6.24.1",
     "babel-preset-latest": "^6.24.1",
     "gulp": "^4.0.0",
     "gulp-clean-css": "^4.0.0",
@@ -40,6 +42,8 @@
     "run-sequence": "^2.2.1"
   },
   "babel": {
-    "presets": ["env"]
+    "presets": [
+      "env"
+    ]
   }
 }

@@ -56,6 +56,9 @@ function loadInstaPosts() {
   }
 }
 
+function registerButtonClick() {
+  window.location.href="https://www.eventbrite.com/e/vertigo-tricking-gathering-2-tickets-54831354056?fbclid=IwAR2ZMLz18EcEpFgzNJh3gNeT2QY0qyvcakLRJjE27rizmFxI6qH9yLa4Jms#tickets";
+}
 
 function yearButtonClick(div) {
   if (div.id === 'button-2018') {

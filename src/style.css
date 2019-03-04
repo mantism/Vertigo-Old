@@ -76,7 +76,19 @@ header {
   width: 80%;
   margin: 0 auto;
   text-align: left;
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+}
+
+#gathering {
+  margin-top: 0rem;
   padding-top: 2rem;
+}
+
+#media img {
+  max-width: 500px;
+  max-height: 400px;
+  height: auto;
 }
 
 .section h1 {
@@ -87,6 +99,11 @@ header {
   background-image: linear-gradient(#1c1c1c, #22364f);
   height: 100%;
   margin: 0 auto;
+}
+
+.emphasize {
+  color: #3cc1ff;
+  size: 2rem;
 }
 
 @keyframes box-hover {
@@ -127,10 +144,6 @@ header {
 .description {
   margin: 2rem auto;
   width: 60%;
-}
-
-#gathering {
-  padding-top: 10rem;
 }
 
 .pic {
@@ -219,5 +232,40 @@ a {
 }
 
 a:visited {
-  color: #C179B9;
+  color: #3cc1ff;
+}
+
+.guest-section {
+  position: relative;
+}
+
+.guest-card {
+  width: 30%;
+  display: inline-block;
+  margin: 0 1rem;
+  background-color: #242424;
+  border-radius: 10px;
+  -webkit-transition: top ease 0.1s;
+  transition: top ease 0.1s;
+  position: relative;
+  top: 0;
+}
+
+.guest-card:hover {
+  position: relative;
+  top: -10px;
+}
+
+.guest-card-caption {
+  padding-left: 2rem;
+  position: relative;
+}
+
+.guest-card img {
+  width: 100%;
+  height: auto;
+  margin: 0;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  position: relative;
 }

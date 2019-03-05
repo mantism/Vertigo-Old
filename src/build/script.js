@@ -52,7 +52,9 @@ function loadInstaPosts() {
 }
 
 function registerButtonClick() {
-  window.location.href = "https://www.eventbrite.com/e/vertigo-tricking-gathering-2-tickets-54831354056?fbclid=IwAR2ZMLz18EcEpFgzNJh3gNeT2QY0qyvcakLRJjE27rizmFxI6qH9yLa4Jms#tickets";
+  var url = "https://www.eventbrite.com/e/vertigo-tricking-gathering-2-tickets-54831354056?fbclid=IwAR2ZMLz18EcEpFgzNJh3gNeT2QY0qyvcakLRJjE27rizmFxI6qH9yLa4Jms#tickets";
+  var win = window.open(url, '_blank');
+  win.focus();
 }
 
 function yearButtonClick(div) {

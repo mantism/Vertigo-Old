@@ -1,15 +1,5 @@
 var homeBottom = $('#home').offset().top + $('#home').outerHeight()
 var navButtons = ['#home-button', '#gathering-button', '#about-button', '#media-button', '#merch-button', '#contact-button']
-var instaLinks = ['https://www.instagram.com/p/BsrNSRolF0u/', 
-                  'https://www.instagram.com/p/BjvgD8yHBpP/', 
-                  'https://www.instagram.com/p/BjaMnpDH8A6/',
-                  'https://www.instagram.com/p/BjGI0g9nKcX/',
-                  'https://www.instagram.com/p/BjDRhHDna1G/',
-                  'https://www.instagram.com/p/Bi6OLcLnCK5/',
-                  'https://www.instagram.com/p/Bi5iaadnWML/',
-                  'https://www.instagram.com/p/Bi3Aw7rnX6-/',
-                  'https://www.instagram.com/p/BizhFognIWC/'
-                ];
 var atTop;
         
 
@@ -27,32 +17,6 @@ function toggleActive(element) {
     } else {
       $(navButtons[i]).removeClass('active');
     }
-  }
-}
-
-function loadInstaPosts() {
-  var images = []
-  var posts = []
-  for (var i = 0; i < instaLinks.length; i++) {
-    var url = 'https://api.instagram.com/oembed?url=' + instaLinks[i];
-    posts.push(document.getElementById('post-' + (i + 1)));
-    fetch(url)
-      .then(response => response.json())
-      .then(data => {
-        var img = document.createElement('img');
-        img.src = data.thumbnail_url;
-        if (img.height > img.width) {
-          img.height = 'auto';
-          img.width = 'auto';
-        }
-        images.push(img)
-      }).then(() => {
-        if (images.length === 9) {
-          for (var j = 0; j < images.length; j++) {
-            posts[j].appendChild(images[j])
-          }
-        }
-      })
   }
 }
 
@@ -100,7 +64,6 @@ $(window).scroll(function() {
 });
 
 $(document).ready( function() {
-  loadInstaPosts();
   atTop = true;
 
   $('#home-button').click(function() {

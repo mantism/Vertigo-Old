@@ -21,6 +21,11 @@ function toggleActive(element) {
   }
 }
 
+function loadMailChimpForm() {
+  var elem = document.getElementById('mailchimp');
+  elem.classList.toggle('active');
+}
+
 function registerButtonClick() {
   var url = "https://www.eventbrite.com/e/vertigo-tricking-gathering-2-tickets-54831354056?fbclid=IwAR2ZMLz18EcEpFgzNJh3gNeT2QY0qyvcakLRJjE27rizmFxI6qH9yLa4Jms#tickets";
   var win = window.open(url, '_blank');

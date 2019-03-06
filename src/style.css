@@ -336,3 +336,12 @@ a:visited {
   border-top-right-radius: 10px;
   position: relative;
 }
+
+#mailchimp.active {
+  display: block;
+  color: black;
+}
+
+#mailchimp {
+  display: none;
+}

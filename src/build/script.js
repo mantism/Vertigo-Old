@@ -3,6 +3,8 @@
 var homeBottom = $('#home').offset().top + $('#home').outerHeight();
 var navButtons = ['#home-button', '#gathering-button', '#about-button', '#media-button', '#merch-button', '#contact-button'];
 var atTop;
+var logo1 = document.getElementById("nav-logo");
+var logo2 = document.getElementById("nav-logo2");
 
 function isInView(element) {
   var elementTop = element.offset().top;
@@ -50,10 +52,21 @@ $(window).scroll(function () {
   if ($(window).scrollTop() < homeBottom) {
     toggleActive('#home-button');
     $('header').css('background-color', '');
+    logo1.style.opacity = '1.0';
+    logo1.style.width = 'auto'; //logo1.style.display = 'inline-block';
+
+    logo2.style.opacity = '0.0';
+    logo2.style.width = '0'; //logo2.style.display = 'none';
+
     atTop = true;
   } else {
     $('header').css('background-color', '#1c1c1c');
     atTop = false;
+    logo1.style.opacity = '0.0';
+    logo1.style.width = '0'; //logo1.style.display = 'none';
+
+    logo2.style.opacity = '1.0';
+    logo2.style.width = 'auto'; //logo2.style.display = 'inline-block';
   }
 
   if (isInView($('#gathering')) && !atTop) {

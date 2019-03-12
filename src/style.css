@@ -55,6 +55,26 @@ header {
   color: white;
 }
 
+#nav-logo {
+  /*display: inline-block;*/
+  opacity: 1.0;
+  -webkit-transition: opacity 0.5s ease;
+  -moz-transition: opacity 0.5s ease;
+  -o-transition: opacity 0.5s ease;
+  transition: opacity 0.5s ease;
+  width: auto;
+}
+
+#nav-logo2 {
+  /*display: none;*/
+  opacity: 0.0;
+  width: 0;
+  -webkit-transition: opacity 0.5s ease;
+  -moz-transition: opacity 0.5s ease;
+  -o-transition: opacity 0.5s ease;
+  transition: opacity 0.5s ease;
+}
+
 @media screen and (max-width: 750px) {
   .topnav a {display: none;}
   .topnav a.icon {
@@ -64,6 +84,11 @@ header {
   #nav-logo {
     float: left;
     margin-left: 1rem; 
+  }
+
+  #nav-logo2 {
+    float: left;
+    margin-left: 1rem;
   }
 }
 
@@ -87,6 +112,15 @@ header {
     margin-top: 5px;
     margin-bottom: 5px;
   }
+
+  .topnav.responsive #nav-logo2 {
+    float: none;
+    display: block;
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+
+
 }
 
 .topnav .icon {
@@ -292,7 +326,8 @@ a:visited {
 @media screen and (max-width: 750px) {
   .guest-card {
     width: 75%;
-    margin: 0 auto;
+    margin: 10px auto;
+    margin-left: 10px;
   }
 }
 
@@ -304,11 +339,11 @@ a:visited {
 }
 
 .guest-card {
-  display: block;
+  display: inline-block;
   background-color: #242424;
   border-radius: 10px;
-  -webkit-transition: top ease 0.1s;
-  transition: top ease 0.1s;
+  -webkit-transition: top ease 0.0.5s;
+  transition: top ease 0.0.5s;
   position: relative;
   top: 0;
   padding-bottom: 0.2rem;

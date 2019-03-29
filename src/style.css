@@ -333,8 +333,8 @@ a:visited {
 
 @media screen and (min-width: 750px) {
   .guest-card {
-    width: 30%;
-    margin: 0 1rem;
+    width: 25%;
+    margin: 10px 1rem;
   }
 }
 

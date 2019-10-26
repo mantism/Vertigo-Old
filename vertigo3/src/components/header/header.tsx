@@ -1,8 +1,19 @@
 import React, {Component} from 'react';
+import { MDBContainer, MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavbarToggler, MDBCollapse, MDBNavItem, MDBNavLink, MDBIcon } from 'mdbreact';
+import { BrowserRouter as Router } from 'react-router-dom';
 import './header.scss';
 import {FaBars, FaWindowClose} from 'react-icons/fa';
 import logo from '../../assets/images/logo.png';
 class Header extends Component {
+  public onClick: any;
+  constructor(props) {
+    super(props);
+    this.state = {
+        collapse: false,
+    };
+    this.onClick = this.onClick.bind(this);
+  }
+
   render() {
     return (
       <header>
@@ -14,7 +25,10 @@ class Header extends Component {
         <h1 className="logo">Testing hamburgers</h1>
 
         <nav id="main-menu" className="main-menu" aria-label="Main Menu">
-          <a href="main-menu-toggle" id="main-menu-close" className="menu-close" aria-label="Close Main Menu">
+          <a href="main-menu-toggle" 
+              id="main-menu-close" 
+              className="menu-close" 
+              aria-label="Close Main Menu">
             <span className="sr-only">Close Main Menu</span>
             <FaWindowClose aria-hidden="true"/>
           </a>
@@ -30,6 +44,11 @@ class Header extends Component {
         <a href="#main-menu-toggle" className="backdrop" tabIndex={-1} aria-hidden="true" hidden></a>
       </header>
     );
+  }
+
+  private toggleMenu(event) {
+    let type = event.type;
+    let button = this
   }
 }
 

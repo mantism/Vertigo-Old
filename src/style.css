@@ -11,7 +11,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #logo {
-  margin: 50px auto;
+  margin: 0px auto;
+  width: 200px;
+  height: auto;
 }
 
 .content {
